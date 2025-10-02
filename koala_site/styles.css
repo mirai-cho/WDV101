@@ -18,7 +18,7 @@ ol { list-style-type: upper-roman; list-style-position: outside; margin-left: 2r
 ul { list-style-type: square; list-style-position: inside; margin-left: 1rem; }
 
 /* 4-チャレンジ) 小GIFを箇条書きに使用（フォールバック付き） */
-ul.fancy-bullets { list-style-image: url("images/leaf-bullet.gif"); list-style-type: square; }
+ul.fancy-bullets { list-style-image: url("images/leaf-1-24.png"); list-style-type: square; }
 
 /* 5) ハイパーリンクの疑似クラス */
 a:link { color: #0b57d0; }
