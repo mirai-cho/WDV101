@@ -59,7 +59,6 @@ nav.site-nav .nav-list a:focus {
 }
 
 /* contact us form */
-/* 既存のフォーム関連を置き換え */
 input[type=text], select, textarea{
   width: 100%;
   padding: 12px;
@@ -75,6 +74,5 @@ input[type=submit]{
   background-color:#04AA6D; color:#fff; padding:12px 20px; border:0; border-radius:4px; cursor:pointer;
 }
 .container{ max-width:600px; margin:0 auto; background:#f2f2f2; padding:20px; border-radius:5px; }
-/* 行・列のフロートは不要なので無効化 */
 .col-25,.col-75{ float:none; width:100%; margin-top:0; }
 .row:after{ content:none; display:block; clear:none; }
