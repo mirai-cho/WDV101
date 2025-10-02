@@ -59,6 +59,7 @@ nav.site-nav .nav-list a:focus {
 }
 
 /* contact us form */
+/* 既存のフォーム関連を置き換え */
 input[type=text], select, textarea{
   width: 100%;
   padding: 12px;
@@ -66,56 +67,14 @@ input[type=text], select, textarea{
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
-}
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-/* submit button */
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-/* container */
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-/* Floating column for labels: 25% width */
-.col-25 {
-  float: left;
-  width: 25%;
   margin-top: 6px;
+  margin-bottom: 12px;
 }
-
-/* Floating column for inputs: 75% width */
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
+label { display:block; margin-top: 12px; }
+input[type=submit]{
+  background-color:#04AA6D; color:#fff; padding:12px 20px; border:0; border-radius:4px; cursor:pointer;
 }
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
+.container{ max-width:600px; margin:0 auto; background:#f2f2f2; padding:20px; border-radius:5px; }
+/* 行・列のフロートは不要なので無効化 */
+.col-25,.col-75{ float:none; width:100%; margin-top:0; }
+.row:after{ content:none; display:block; clear:none; }
