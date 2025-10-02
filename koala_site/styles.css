@@ -1,0 +1,54 @@
+/* 基本テキストとフォント */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.6; margin: 0; }
+
+/* 1) グループ化セレクタ */
+h1, h2, h3 { text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* 2) 子孫セレクタ（例: nav内リンク） */
+nav.site-nav .nav-list a { font-weight: 600; }
+
+/* 3) クラス（独立・依存の両方） */
+.highlight { background: #fff3b0; }          /* 独立クラス: どの要素にも可 */
+p.notice { border-left: 4px solid #2a6f97; padding: 0.5rem 0.75rem; } /* 依存クラス: p要素に限定 */
+
+/* 4) リスト外観: ol/ul と position */
+ol { list-style-type: upper-roman; list-style-position: outside; margin-left: 2rem; }
+ul { list-style-type: square; list-style-position: inside; margin-left: 1rem; }
+
+/* 4-チャレンジ) 小GIFを箇条書きに使用（フォールバック付き） */
+ul.fancy-bullets { list-style-image: url("images/leaf-bullet.gif"); list-style-type: square; }
+
+/* 5) ハイパーリンクの疑似クラス */
+a:link { color: #0b57d0; }
+a:visited { color: #5e35b1; }
+a:hover, a:focus { color: #0b57d0; background: #e3f2fd; outline: 2px solid transparent; text-decoration: underline; }
+a:active { color: #c62828; }
+
+/* 6) テキスト装飾と整形 */
+.tagline { text-align: center; font-weight: 700; text-transform: capitalize; }
+.center { text-align: center; }
+
+/* 7) 最初の段落の先頭文字（疑似要素） */
+.lead::first-letter { float: left; font-size: 3rem; line-height: 1; padding-right: 0.25rem; font-weight: 700; color: #2a6f97; }
+
+/* 8) インラインナビ（<nav>） */
+nav.site-nav { background: #1b3a57; color: #ffffff; }
+nav.site-nav .nav-list { display: flex; gap: 0.75rem; list-style-type: none; margin: 0; padding: 0.5rem 0.75rem; } /* 箇条書き削除 */
+
+/* 9) ナビ内リンクの色・背景とホバー/フォーカス */
+nav.site-nav .nav-list a {
+  display: inline-block;
+  color: #ffffff;                    /* 下線削除 */
+  text-decoration: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+}
+nav.site-nav .nav-list a:hover,
+nav.site-nav .nav-list a:focus {
+  background: #ffffff;
+  color: #1b3a57;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
