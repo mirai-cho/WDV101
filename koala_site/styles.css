@@ -71,8 +71,19 @@ input[type=text], select, textarea{
 }
 label { display:block; margin-top: 12px; }
 input[type=submit]{
-  background-color:#04AA6D; color:#fff; padding:12px 20px; border:0; border-radius:4px; cursor:pointer;
+  background-color:#2a6f97; color:#fff; padding:12px 20px; border:0; border-radius:4px; cursor:pointer;
 }
 .container{ max-width:600px; margin:0 auto; background:#f2f2f2; padding:20px; border-radius:5px; }
 .col-25,.col-75{ float:none; width:100%; margin-top:0; }
 .row:after{ content:none; display:block; clear:none; }
+
+/* margin for all pages */
+main {
+  margin: 20px;
+}
+body h1 {
+  margin: 20px;
+}
+footer {
+    margin: 20px;
+}
