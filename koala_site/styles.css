@@ -144,11 +144,12 @@ body::after {
   font-style: normal;
 }
 
-/* paragraph next to photo */
+/* Koala_home */
+/* paragraph next to photo in home page*/
 .content-block {
   display: flex;
   align-items: flex-start;   
-  gap: 20px;                 /* space between image and text */
+  gap: 20px;                 
   margin: 20px 0;
 }
 
@@ -168,3 +169,68 @@ div.scroll-container {
 div.scroll-container img {
   padding: 10px;
 }
+
+footer {
+  background:#1b3a57;
+  color:#fff;
+  width:100%;
+  margin:0;
+  padding:20px;
+  box-sizing:border-box;
+}
+
+/* copyright */
+.footer-copy {
+  text-align: center;
+  margin-top: 30px;            
+}
+
+/* Adopt page */
+.adopt-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+  margin:24px 0;
+}
+
+.adopt-card{
+  background:#f5f7fa;
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 6px 14px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.adopt-card img{
+  width:100%;
+  aspect-ratio:4/3;          /* keeps uniform tiles */
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+
+.adopt-card h3{
+  margin:12px 0 4px;
+  font-weight:700;
+}
+
+.adopt-card .price{
+  margin:0 0 8px;
+  font-weight:600;
+  color:#1b3a57;
+}
+
+.btn.adopt{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  background:#ffd166;
+  color:#143a52;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.adopt-card:hover{ transform:translateY(-2px); transition:.2s ease; }
+
+/* custom cursor */
+
