@@ -94,10 +94,10 @@ input[type=submit]{
 
 /* margin for all pages */
 main {
-  margin: 20px;
+    margin: 20px;
 }
 body h1 {
-  margin: 20px;
+    margin: 20px;
 }
 footer {
     margin: 20px;
@@ -132,7 +132,6 @@ body::after {
 }
 
 /* font */
-
 .climate-crisis {
   font-family: "Climate Crisis", sans-serif;
   font-weight: 400;
