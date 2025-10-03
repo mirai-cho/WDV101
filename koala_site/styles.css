@@ -71,7 +71,7 @@ input[type=text], select, textarea{
 }
 label { display:block; margin-top: 12px; }
 input[type=submit]{
-  background-color:#2a6f97; color:#fff; padding:12px 20px; border:0; border-radius:4px; cursor:pointer;
+  background-color:#1b3a57; color:#fff; padding:12px 20px; border:0; border-radius:4px; cursor:pointer;
 }
 .container{ max-width:600px; margin:0 auto; background:#f2f2f2; padding:20px; border-radius:5px; }
 .col-25,.col-75{ float:none; width:100%; margin-top:0; }
@@ -87,3 +87,59 @@ body h1 {
 footer {
     margin: 20px;
 }
+
+.hero-title {
+  font-family: "sigmar-one-regular", sans-serif;
+  font-size: 2.5rem;    
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 20px 0;
+}
+
+
+/* background */
+body {
+ background-image: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGN4MWgxZXB6YWhvM3NuOWZ5OGloYWw2MzRqZHh6bzNvMXFnY3lobCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6ZtcZCYVzROMckY8/giphy.gif");
+ background-color: transparent;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8); 
+  z-index: -1;
+}
+
+/* banner */
+.banner {
+    width: 100%;
+}
+
+/* font */
+
+.climate-crisis {
+  font-family: "Climate Crisis", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sigmar-one-regular {
+  font-family: "Sigmar One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* paragraph next to photo */
+.content-block {
+  display: flex;
+  align-items: flex-start;   
+  gap: 20px;                 /* space between image and text */
+  margin: 20px 0;
+}
+
+.content-block img {
+  max-width: 300px;          /* control image size */
+  height: auto;
+}
+
