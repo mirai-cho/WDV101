@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>たびびとの樹 | 問い合わせ</title>
+    <!--Author: Mirai Cho | Date: September 4th 2025 -->
+    <meta name="description" content="Tabibito tree Contact form page.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav">
+        <div class="brand">
+          <img src="./images/logo.png" alt="" width="28" height="28">
+          <span>たびびとの樹 | CONTACT</span>
+        </div>
+        <nav aria-label="主要ナビ">
+          <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </div> 
+    </header>
+    
+    <main>
+      <section class="contact-section">
+        <h2>お問い合わせ</h2>
+        <p>ご質問・オーダーのご相談などお気軽にどうぞ。</p>
+
+        <form action="https://formspree.io/f/myznpvzb" method="POST" class="contact-form">
+            <label>お名前:
+                <input type="text" name="name" placeholder="このサイトに辿り着いた旅人の名前" required>
+            </label>
+
+            <label>メールアドレス:
+                <input type="email" name="email" placeholder="example@example.com" required>
+            </label>
+
+            <label>メッセージ:
+                <textarea name="message" rows="5" placeholder="ご質問・オーダーのご相談などお気軽にどうぞ。" required></textarea>
+            </label>
+
+            <button type="submit" class="btn base-button">送信する</button>
+        </form>
+        <p id="thanks-message" style="display:none; color:#4b3a2b; font-size:1.2em; margin-top:1em;">🌸 送信完了しました！ありがとうございます。</p>
+
+
+        <script src="script.js"></script>
+
+    </main>
+
+    <footer class="site-footer">
+        <small>&copy; 2025 たびびとの樹 | Tabibito Tree by Mirai Cho</small>
+    </footer>
+
+
+  </body>
+
+  
+</html>
