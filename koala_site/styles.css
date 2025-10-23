@@ -11,11 +11,11 @@ nav.site-nav .nav-list a { font-weight: 600; }
 
 /* 3 class*/
 .highlight { background: #fff3b0; }          
-p.notice { border-left: 4px solid #2a6f97; padding: 0.5rem 0.75rem; } 
+p.notice { border-left: 4px solid #2a6f97; padding: 8px 12px; } 
 
 /* 4 ol/ul and position */
-ol { list-style-type: upper-roman; list-style-position: outside; margin-left: 2rem; }
-ul { list-style-type: square; list-style-position: inside; margin-left: 1rem; }
+ol { list-style-type: upper-roman; list-style-position: outside; margin-left: 32px; }
+ul { list-style-type: square; list-style-position: inside; margin-left: 16px; }
 
 /* 4 bullets */
 ul.fancy-bullets {
@@ -24,8 +24,7 @@ ul.fancy-bullets {
   list-style-position: outside;      
 }
 
-
-/* 5　hyperlink */
+/* 5 hyperlink */
 a:link { color: #0b57d0; }
 a:visited { color: #5e35b1; }
 a:hover, a:focus { color: #0b57d0; background: #e3f2fd; outline: 2px solid transparent; text-decoration: underline; }
@@ -36,19 +35,19 @@ a:active { color: #c62828; }
 .center { text-align: center; }
 
 /* 7 lead font*/
-.lead::first-letter { float: left; font-size: 3rem; line-height: 1; padding-right: 0.25rem; font-weight: 700; color: #2a6f97; }
+.lead::first-letter { float: left; font-size: 48px; line-height: 1; padding-right: 4px; font-weight: 700; color: #2a6f97; }
 
 /* 8 <nav> */
 nav.site-nav { background: #1b3a57; color: #ffffff; }
-nav.site-nav .nav-list { display: flex; gap: 0.75rem; list-style-type: none; margin: 0; padding: 0.5rem 0.75rem; }
+nav.site-nav .nav-list { display: flex; gap: 12px; list-style-type: none; margin: 0; padding: 8px 12px; }
 
 .site-nav .nav-list {
   display: flex;
-  justify-content: center; /* centers the items */
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 20px; /* space between links */
+  gap: 20px;
 }
 
 .site-nav .nav-list a {
@@ -56,13 +55,12 @@ nav.site-nav .nav-list { display: flex; gap: 0.75rem; list-style-type: none; mar
   font-weight: 600;
 }
 
-
 /* 9 decoration for <nav> and background */
 nav.site-nav .nav-list a {
   display: inline-block;
-  color: #ffffff;                    
+  color: #ffffff;
   text-decoration: none;
-  padding: 0.35rem 0.6rem;
+  padding: 5.6px 9.6px;
   border-radius: 6px;
 }
 nav.site-nav .nav-list a:hover,
@@ -105,13 +103,12 @@ footer {
 
 .hero-title {
   font-family: "sigmar-one-regular", sans-serif;
-  font-size: 2.5rem;    
+  font-size: 40px;    
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 2px;
   margin: 20px 0;
 }
-
 
 /* background */
 body {
@@ -148,13 +145,13 @@ body::after {
 /* paragraph next to photo in home page*/
 .content-block {
   display: flex;
-  align-items: flex-start;   
-  gap: 20px;                 
+  align-items: flex-start;
+  gap: 20px;
   margin: 20px 0;
 }
 
 .content-block img {
-  max-width: 300px;          /* control image size */
+  max-width: 300px;
   height: auto;
 }
 
@@ -182,7 +179,7 @@ footer {
 /* copyright */
 .footer-copy {
   text-align: center;
-  margin-top: 30px;            
+  margin-top: 30px;
 }
 
 /* Adopt page */
@@ -203,7 +200,7 @@ footer {
 
 .adopt-card img{
   width:100%;
-  aspect-ratio:4/3;          /* keeps uniform tiles */
+  aspect-ratio:4/3;
   object-fit:cover;
   border-radius:12px;
   display:block;
@@ -233,6 +230,11 @@ footer {
 .adopt-card:hover{ transform:translateY(-2px); transition:.2s ease; }
 
 /* FAQ page*/
+.center-image {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -241,7 +243,7 @@ body {
 }
 
 header {
-  padding: 1rem;
+  padding: 16px;
   text-align: center;
 }
 
@@ -254,7 +256,7 @@ header {
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 16px;
 }
 
 .site-nav a {
@@ -263,33 +265,63 @@ header {
 }
 
 main {
-  padding: 1rem 2rem;
+  padding: 16px 32px;
 }
 
 .faq {
   column-count: 3;
-  column-gap: 2rem;
+  column-gap: 32px;
   column-rule: 2px solid #ccc;
 }
 
 .faq-title {
   column-span: all;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 .qa {
   break-inside: avoid;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 .qa h3 {
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
+  font-size: 16px;
+  margin-bottom: 4px;
 }
 
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 16px;
 }
 
+/* float images */
+img {
+  margin: 0.75rem;
+  border: 2px solid #ccc;
+  max-width: 100%;
+  height: auto;
+}
+
+.float-right {
+  float: right;
+  margin-left: 1rem;
+}
+
+.float-left {
+  float: left;
+  margin-right: 1rem;
+}
+
+/* h3, h4 styling */
+h3, h4 {
+  margin: 1rem 0;
+  padding: 0.5rem 0.75rem;
+  border-top: 3px solid #1b3a57;
+}
+
+/* for illustration */
+img.no-style {
+  max-width: none;
+  height: auto;
+}
