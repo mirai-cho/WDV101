@@ -155,6 +155,15 @@ body::after {
   height: auto;
 }
 
+.container {
+  background-color: #f5f7fa;
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+
+}
+
 /* photo gallery*/
 div.scroll-container {
   background-color: #4f4d4d;

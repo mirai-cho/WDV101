@@ -1,3 +1,4 @@
+<!-- finished_homework.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,34 +6,62 @@
   <meta name="description" content="WDV101 Site Directory">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finished Homework</title>
-  <!-- Author: Mirai Cho -->
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 
 <body>
   
   <header>
-      <h1>Finished Homework</h1>
+    <h1>Finished Homework</h1>
   </header>
-      <nav>
-          <ul>
-            <li>
-              <a href="../koala_site/">Koala Site</a>
-            </li>
-            <li>
-              <a href="../pathname_website/">Pathname Website</a>
-            </li>
-          </ul>
-        </nav>
-    
-    <main>
+
+  <main>
+    <section class="filters" aria-label="Filters">
+      <span class="chip is-active">All</span>
+      <span class="chip">HTML/CSS</span>
+      <span class="chip">Layout</span>
+      <span class="chip">Accessibility</span>
+    </section>
+
+    <section class="cards" aria-label="Assignments">
+      <article class="card">
+        <img src="images/koala-faq-thumb.jpg" alt="Koala Site FAQ preview" loading="lazy">
+        <h3>Koala Site</h3>
+        <p>Koala adoption site.</p>
+        <div class="meta">
+          <span class="tag">HTML/CSS</span><span class="tag">Columns</span><span class="tag">Float</span>
+        </div>
+        <a class="btn primary" href="../koala_site/koala_home.html">Open</a>
+      </article>
+
+      <article class="card">
+        <img src="images/koala-adopt-thumb.jpg" alt="Adopt grid preview" loading="lazy">
+        <h3>Tabibito Tree</h3>
+        <p>Kimono accessory shop.</p>
+        <div class="meta">
+          <span class="tag">Grid</span><span class="tag">Responsive</span>
+        </div>
+        <a class="btn primary" href="../tabibito_tree/home.html">Open</a>
+      </article>
+
+      <article class="card">
+        <img src="images/pathname-thumb.jpg" alt="Pathname structure preview" loading="lazy">
+        <h3>Pathname Website</h3>
+        <p>Relative links and breadcrumb demo.</p>
+        <div class="meta">
+          <span class="tag">Links</span><span class="tag">IA</span>
+        </div>
+        <a class="btn primary" href="../pathname_website/">Open</a>
+      </article>
+    </section>
   </main>
 
-
   <footer>
-    <p>&copy; 2025 Finished Homework by Mirai Cho</p>
+    <p>&copy; <span id="year"></span> Finished Homework by Mirai Cho</p>
   </footer>
 
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
