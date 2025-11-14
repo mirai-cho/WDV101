@@ -203,7 +203,7 @@ body::after {
 
 @media (max-width: 768px) {
   .gallery-grid figure {
-    flex: 0 0 48%;   /* ← ほぼ半分 → 2列 */
+    flex: 0 0 48%;   
   }
 }
 
