@@ -174,42 +174,30 @@ body::after {
 /* Flexbox main */
 .gallery-grid {
   display: flex;
-  flex-wrap: wrap;         
-  justify-content: space-between;
+  flex-wrap: wrap;       
+  /* justify-content */
 }
 
 .gallery-grid figure {
-  width: 30%;               
-  background-color: #4f4d4d;
+  flex: 0 0 31%;         
+  margin: 0 1% 20px;  
   box-sizing: border-box;
-  padding: 10px;
-  margin-bottom: 20px;
+  background-color: #4f4d4d;
+  padding: 5px;
   color: white;
   text-align: center;
 }
 
-/* img */
+
 .gallery-grid img {
-  width: auto;
   height: auto;
+  display: block;
 }
 
 /* figcaption */
 .gallery-grid figcaption {
   margin-top: 8px;
   font-size: 14px;
-}
-
-@media (max-width: 800px) {
-  .gallery-grid figure {
-    width: 48%;
-  }
-}
-
-@media (max-width: 500px) {
-  .gallery-grid figure {
-    width: 100%;
-  }
 }
 
 /* copyright */
