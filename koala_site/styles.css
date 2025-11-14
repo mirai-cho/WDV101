@@ -175,7 +175,7 @@ body::after {
 .gallery-grid {
   display: flex;
   flex-wrap: wrap;       
-  /* justify-content */
+
 }
 
 .gallery-grid figure {
@@ -191,6 +191,7 @@ body::after {
 
 .gallery-grid img {
   height: auto;
+  width: auto;
   display: block;
 }
 
@@ -198,6 +199,12 @@ body::after {
 .gallery-grid figcaption {
   margin-top: 8px;
   font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .gallery-grid figure {
+    flex: 0 0 48%;   /* ← ほぼ半分 → 2列 */
+  }
 }
 
 /* copyright */
