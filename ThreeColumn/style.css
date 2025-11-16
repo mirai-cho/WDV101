@@ -10,9 +10,10 @@ body {
 
 
 .container {
-  width: 75%;         
+  width: 100%;
   max-width: 1024px;
-  margin: 0 auto;      
+  margin: 0 auto;
+  padding: 0;
   background-color: #ffffff;
 }
 
@@ -41,9 +42,8 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-
-  display: flex;                
-  justify-content: space-around; 
+  display: flex;
+  justify-content: space-around;
 }
 
 .nav a {
@@ -52,28 +52,37 @@ body {
   font-weight: bold;
 }
 
-/* main column  */
+/* 3 column */
 .content-row {
-  display: flex;       
-  gap: 10px;           
+  display: flex;
+  gap: 10px;
   margin: 10px 0;
 }
 
-/* column for side */
+
 .sidebar {
-  flex: 1;             
+  flex: 1;
   padding: 20px;
   background-color: #fafafa;
 }
 
-/* column in the middle */
+
 .main-content {
-  flex: 2;            
+  flex: 2;
   padding: 20px;
   background-color: #ffffff;
 }
 
-/* footer */
+h2 {
+  text-align: center;
+}
+
+.content-row img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Footer */
 .footer {
   background-color: #ffe0b2;
   padding: 15px;
