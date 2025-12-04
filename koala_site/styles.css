@@ -195,6 +195,31 @@ body::after {
   display: block;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive: 768px and below */
+@media screen and (max-width: 768px) {
+
+  .gallery-grid {
+    flex-direction: column;
+  }
+
+  .gallery-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 10px;
+  }
+
+  body {
+    background-color: #f0f8ff; 
+  }
+}
+
+
 /* figcaption */
 .gallery-grid figcaption {
   margin-top: 8px;
