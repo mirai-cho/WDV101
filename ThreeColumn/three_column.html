@@ -3,69 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat Care Tips - Bootstrap Layout</title>
 
-  <title>Flexbox Layout Assignment</title>
-  <link rel="stylesheet" href="style.css" />
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="hero-banner mb-4">
+    <div class="container py-5 text-center">
+      <h1 class="display-5 fw-bold">Cat Care Tips</h1>
+      <p class="fs-4">Healthy, happy cats start with good daily care.</p>
+      <a href="#content" class="btn btn-primary btn-lg">Learn More</a>
+    </div>
+  </header>
 
-  <div class="container">
-    <header class="header">
-      <h1>Cat Care Tips </h1>
-    </header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">CatCare</a>
 
-    <nav class="nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Gallery</a></li>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      </ul>
-    </nav>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#feeding">Feeding</a></li>
+          <li class="nav-item"><a class="nav-link" href="#grooming">Grooming</a></li>
+          <li class="nav-item"><a class="nav-link" href="#play">Enrichment</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<!-- flexbox -->
-<div class="content-row">
-  <!-- left column -->
-  <aside class="sidebar left">
-    <h2>Feeding</h2>
-    <ul>
-      <li>Wet food vs dry food: mix both to keep hydration and dental health.</li>
-      <li>Portion size: adjust based on weight and activity level.</li>
-      <li>Always provide fresh water in a clean bowl.</li>
-    </ul>
-    <img src="./images/cat_feeding.jpg" hight="150" width="150" alt="cat eating food">
-  </aside>
-
-  <!-- main column -->
-  <section class="main-content">
-    <h2>Grooming</h2>
-    <p>
-      Brush your cat a few times a week to reduce shedding and hairballs.
-      Use nail clippers made for cats and trim only the clear tip of the claw.
-      Regular grooming helps you check for skin problems or parasites early.
-    </p>
-    <img src="./images/cat_grooming.jpg" hight="150" width="150" alt="cat being brushed">
+  <section class="container mb-5">
+    <div id="catCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded shadow-sm">
+        <div class="carousel-item active">
+          <img src="./images/cat-sleeping-bed.jpg" class="d-block w-100" alt="Relaxed cat resting on a bed">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/cat-outside.jpg" class="d-block w-100" alt="Cat sleeping outside">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/cat-legs.jpg" class="d-block w-100" alt="Kitten legs">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#catCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#catCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
   </section>
 
-  <!-- right column -->
-  <aside class="sidebar right">
-    <h2>Play &amp; Enrichment</h2>
-    <p>
-      Daily playtime with feather wands or toy mice keeps cats active and happy.
-      Provide scratching posts, climbing shelves, and hiding spots.
-      Rotate toys so your cat doesn’t get bored.
-    </p>
-    <img src="./images/cat_play.jpg" hight="150" width="150" alt="cat playing with a toy">
-  </aside>
-</div>
+ 
+  <main class="container mb-5" id="content">
+    <div class="row g-4 text-center">
 
-<footer class="footer">
-  <p>Footer</p>
-</footer>
+      <section class="col-md-4" id="feeding">
+        <div class="card h-100 shadow-sm">
+          <img src="./images/cat_feeding.jpg" class="card-img-top" alt="Cat eating from a bowl">
+          <div class="card-body">
+            <h2 class="card-title h4">Feeding</h2>
+            <p class="card-text">
+              Mix wet and dry food to support both hydration and dental health. 
+              Adjust portion sizes based on your cat's age, weight, and activity level.
+            </p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Feeding guide</a>
+          </div>
+        </div>
+      </section>
 
-</div>
+      <section class="col-md-4" id="grooming">
+        <div class="card h-100 shadow-sm">
+          <img src="./images/cat_grooming.jpg" class="card-img-top" alt="Cat being brushed">
+          <div class="card-body">
+            <h2 class="card-title h4">Grooming</h2>
+            <p class="card-text">
+              Regular brushing reduces shedding and hairballs. 
+              Use cat safe nail clippers and check the skin for any irritation or parasites.
+            </p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Grooming tips</a>
+          </div>
+        </div>
+      </section>
 
-  </body>
 
+      <section class="col-md-4" id="play">
+        <div class="card h-100 shadow-sm">
+          <img src="./images/cat_play.jpg" class="card-img-top" alt="Cat playing with a toy">
+          <div class="card-body">
+            <h2 class="card-title h4">Play and Enrichment</h2>
+            <p class="card-text">
+              Rotate toys, add scratching posts and climbing shelves to keep your cat 
+              mentally and physically active every day.
+            </p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Play ideas</a>
+          </div>
+        </div>
+      </section>
 
+    </div>
+  </main>
+
+  <section class="container mb-5">
+    <h2 class="text-center mb-3">Common Cat Care Questions</h2>
+
+    <div class="accordion" id="catAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            How often should I feed my cat?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#catAccordion">
+          <div class="accordion-body">
+            Most adult cats do well with two meals a day. Kittens need three to four smaller meals.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            Do indoor cats need enrichment?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#catAccordion">
+          <div class="accordion-body">
+            Yes. Indoor cats benefit from climbing trees, window perches, puzzle feeders and daily play sessions.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mb-5">
+    <div class="alert alert-info text-center custom-alert" role="alert">
+      Always consult your veterinarian before making big changes to your cat's diet or health routine.
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 Cat Care Guide. All rights reserved.</p>
+  </footer>
+
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+</body>
 </html>
