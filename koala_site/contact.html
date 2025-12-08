@@ -46,6 +46,14 @@
     <label for="lname">Last Name</label>
     <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
+    <label>Purpose</label>
+    <div class="purpose-options">
+      <label><input type="radio" name="purpose" value="question"> Question</label>
+      <label><input type="radio" name="purpose" value="adoption"> Adoption</label>
+      <label><input type="radio" name="purpose" value="message"> Message</label>
+    </div>
+
+
     <label for="country">Country</label>
     <select id="country" name="country">
       <option value="australia">Australia</option>
@@ -54,7 +62,7 @@
     </select>
 
     <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea id="subject" name="subject" placeholder="write your message here! " style="height:200px"></textarea>
 
     <input type="submit" value="Submit">
 

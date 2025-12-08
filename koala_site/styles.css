@@ -82,13 +82,57 @@ input[type=text], select, textarea{
   margin-top: 6px;
   margin-bottom: 12px;
 }
-label { display:block; margin-top: 12px; }
-input[type=submit]{
-  background-color:#1b3a57; color:#fff; padding:12px 20px; border:0; border-radius:4px; cursor:pointer;
+
+label { 
+  display:block; 
+  margin-top: 12px; 
 }
-.container{ max-width:600px; margin:0 auto; background:#f2f2f2; padding:20px; border-radius:5px; }
-.col-25,.col-75{ float:none; width:100%; margin-top:0; }
-.row:after{ content:none; display:block; clear:none; }
+
+input[type=submit]{
+  background-color:#1b3a57; 
+  color:#fff; 
+  padding:12px 20px; 
+  border:0; 
+  border-radius:4px; 
+  cursor:pointer;
+}
+
+.container{
+  max-width:600px; 
+  margin:0 auto; 
+  background:#f2f2f2; 
+  padding:20px; 
+  border-radius:5px; 
+}
+
+header img{
+  border: none;
+}
+
+fieldset{
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.purpose-options{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 12px;
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.purpose-options label{
+  margin-top: 0;
+}
+
 
 /* margin for all pages */
 main {
