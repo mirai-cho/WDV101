@@ -7,6 +7,7 @@
     --light-color: #666666;
     --pink: #e9768f;
     --purple: #4b2b95;
+    --light-pink: #fde7ef;
     --box-shadow: 0 5px 15px rgba(0,0,0,.1); 
 }
 
@@ -235,7 +236,7 @@ section{
 
 /* footer */
 .footer{
-  background: #fde7ef; 
+  background: var(--light-pink); 
   padding: 40px 0 20px;
   margin-top: 60px;
 }
@@ -421,14 +422,14 @@ padding: 140px 20px 40px;
   color: var(--light-color);
 }
 
-/* Common section title */
+
 .section-title {
   font-size: 24px;
   margin: 30px 0 15px;
   color: var(--black);
 }
 
-/* Timeline list */
+
 .daily-schedule {
   background: #fff7eb;
   border-radius: 16px;
@@ -464,7 +465,12 @@ padding: 140px 20px 40px;
   color: var(--black);
 }
 
-/* Pre-K overview text */
+.schedule-page img{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 130px;
+}
+
 .prek-overview {
   margin-top: 30px;
 }
@@ -476,7 +482,7 @@ padding: 140px 20px 40px;
   margin-bottom: 12px;
 }
 
-/* Domain cards */
+
 .prek-domains {
   margin-top: 40px;
 }
@@ -508,7 +514,7 @@ padding: 140px 20px 40px;
   color: var(--light-color);
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .schedule-page {
     padding: 120px 16px 40px;
@@ -523,3 +529,248 @@ padding: 140px 20px 40px;
     font-size: 14px;
   }
 }
+
+/* Accreditation */
+.accreditation-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 140px 20px 60px; 
+}
+
+.acc-hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.acc-hero h1 {
+  font-size: 32px;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.acc-hero p {
+  font-size: 16px;
+  color: var(--light-color);
+}
+
+.acc-section {
+  margin-top: 32px;
+}
+
+.acc-title {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+
+.acc-two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.acc-text {
+  flex: 2 1 320px;
+}
+
+.acc-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--light-color);
+  margin-bottom: 10px;
+}
+
+.acc-highlight,
+.acc-callout {
+  flex: 1 1 260px;
+  background: #fff7eb;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: var(--box-shadow);
+  border-left: 5px solid var(--orange);
+}
+
+.acc-highlight h3,
+.acc-callout h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+
+.acc-highlight p,
+.acc-callout p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--light-color);
+}
+
+.acc-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 6px;
+}
+
+.acc-check-item {
+  flex: 1 1 220px;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-size: 14px;
+  color: var(--black);
+  position: relative;
+  padding-left: 28px;
+}
+
+.acc-check-item::before {
+  content: "✓";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  color: var(--pink);
+}
+
+.acc-note {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--light-color);
+}
+
+.acc-org-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 14px;
+}
+
+.acc-org-card {
+  flex: 1 1 260px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: var(--box-shadow);
+}
+
+.acc-org-card h3 {
+  font-size: 17px;
+  margin-bottom: 6px;
+  color: var(--black);
+}
+
+.acc-org-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--light-color);
+}
+
+.acc-community p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--light-color);
+  margin-bottom: 12px;
+}
+
+.acc-community-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.acc-community-card {
+  flex: 1 1 320px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: var(--box-shadow);
+  border-top: 5px solid var(--pink);
+}
+
+.acc-community-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+
+.acc-community-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--light-color);
+}
+
+.acc-address {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--light-color);
+}
+
+@media (max-width: 768px) {
+  .accreditation-page {
+    padding: 120px 16px 40px;
+  }
+
+  .acc-two-column {
+    flex-direction: column;
+  }
+}
+
+
+/* contact us form */
+.contact{
+  font-size: 17px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 140px 20px 60px; 
+}
+
+.contact .contact-title{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: var(--black);
+}
+
+input[type="text"], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+label{
+  display: block;
+  margin-top: 12px;
+}
+
+input[type=submit]{
+  background-color: var(--purple);
+  color: var(--white);
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact .container{
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--light-pink);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+
+fieldset{
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+

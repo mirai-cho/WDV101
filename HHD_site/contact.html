@@ -21,7 +21,6 @@
 <header class="header">
   <div class="container header-inner">
 
-
     <a href="home.html" class="brand">
       <img src="./images/hhd_logo.png"
            width="70"
@@ -33,20 +32,17 @@
       </div>
     </a>
 
-
     <nav class="navbar">
       <ul>
         <li><a href="./home.html">Home</a></li>
         <li><a href="./about.html">About</a></li>
         <li><a href="./accreditation.html">Accreditation</a></li>
-        <li><a href="./scedule.html">Schedule</a></li>
+        <li><a href="./schedule.html">Schedule</a></li>
         <li><a href="./contact.html">Contact</a></li>
       </ul>
     </nav>
 
-
-  
-<div class="header-icons">
+    <div class="header-icons">
       <div class="login-wrapper">
         <button type="button" class="icon-btn" aria-label="Parent login">
           <i class="fas fa-user"></i>
@@ -66,16 +62,46 @@
           <input type="submit" value="Log in" class="btn">
         </form>
       </div>
+    </div>
+
   </div>
 </header>
 
-<mian>
+<main class="contact">
+  <section>
+    <h1 class="contact-title">Contact Form</h1>
+    <div class="container">
 
-</mian>
+      <form method="post" action="form_response_basic.php">
+
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+        <label for="country">Class</label>
+        <select id="country" name="country">
+          <option value="panda">Panda (age 6–7)</option>
+          <option value="koala">Koala (age 8–9)</option>
+          <option value="lion">Lion (age 10–12)</option>
+        </select>
+
+        <label for="subject">Message</label>
+        <textarea id="subject" name="subject" placeholder="Write your message here!" style="height:200px" required></textarea>
+
+        <input type="submit" value="Submit">
+
+      </form>
+
+    </div>
+  </section>
+</main>
+
 
 <footer class="footer">
-    <div class="footer-inner">
-            <div class="footer-brand">
+  <div class="footer-inner">
+    <div class="footer-brand">
       <img src="./images/hhd_logo.png" alt="Happy Hands Daycare logo">
       <h3>Happy Hands Daycare</h3>
       <p>Growing, learning, and smiling together.</p>
@@ -87,15 +113,15 @@
         <li><a href="./home.html">Home</a></li>
         <li><a href="./about.html">About</a></li>
         <li><a href="./accreditation.html">Accreditation</a></li>
-        <li><a href="./scedule.html">Schedule</a></li>
+        <li><a href="./schedule.html">Schedule</a></li>
         <li><a href="./contact.html">Contact</a></li>
       </ul>
     </div>
 
     <div class="footer-contact">
       <h4>Contact</h4>
-      <p>3450 Regency LaneCarmel <br>Indiana 62704</p>
-      <p>Phone:(317) 555-7414</p>
+      <p>3450 Regency Lane, Carmel<br>Indiana 62704</p>
+      <p>Phone: (317) 555-7414</p>
     </div>
 
   </div>
@@ -103,7 +129,6 @@
   <div class="footer-bottom">
     <p>&copy; 2025 Happy Hands Daycare. All rights reserved.</p>
   </div>
-    </div>
 </footer>
 
 </body>
