@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="WDV221_HW Site Directory">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finished Homework</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <header>
+    <h1>Finished Homework</h1>
+  </header>
+
+    <main>
+    <section class="filters" aria-label="Filters">
+      <span class="chip is-active">All</span>
+      <span class="chip">HTML/CSS</span>
+      <span class="chip">Layout</span>
+      <span class="chip">Accessibility</span>
+      <span class="chip">JavaScript</span>
+    </section>
+
+          <article class="card">
+        <img src="image/" alt="" loading="lazy">
+        <h3>Upcoming Assignment</h3>
+        <p>...</p>
+        <div class="meta">
+          <span class="tag">JavaScript</span>
+        </div>
+        <a class="btn primary" href="">Open</a>
+      </article>
+
+      <article class="card">
+        <img src="./image" alt="" loading="lazy">
+        <h3>Upcoming Assignment</h3>
+        <p>...</p>
+        <div class="meta">
+          <span class="tag">JavaScript</span>
+        </div>
+        <a class="btn primary" href="">Open</a>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Finished Homework by Mirai Cho</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+
+</html>
