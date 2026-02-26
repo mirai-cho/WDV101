@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Function Introduction Assignment</title>
+
+<style>
+
+body {background-color:#d9eff6;
+}
+
+.highlightTitle	{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:14px;
+	text-decoration:underline;
+	color:#096;
+}
+
+
+</style>
+</head>
+
+<body>
+
+	<h2>WDV221 Intro Javascript</h2>
+	<h3>Unit-3 - Functions </h3>
+	<hr />
+	<p>Please complete the following exercises on this page. When complete post this page to your server. Make a link in your WDV221 homework  page for this assignment.</p>
+	<p>Submit this assignment on Blackboard. Please include a link to your homework page.</p>
+	<hr />
+
+	<p> Use Javascript to complete the following tasks. </p>
+
+	
+	<ol>
+		<li> Create a global variable and assign it with a string of your name</li>
+		 <script>
+			var myName = "Mirai Cho";
+		 </script>
+
+		<li> Create a function called sayHello( ).  The function will use the alert( ) function to display your name.  Call it during runtime.</li>
+		<script>
+			function sayHello(){
+				alert(myName);
+			}
+			sayHello();
+		</script>
+
+		<li>Create a function called printHello( ). The function will use the document.write( ) function to display your name.  Call it twice in a row during runtime.</li>
+		<script>
+			function printHello(){
+				document.write(myName + "<br>");
+			}
+			printHello();
+			printHello();
+		</script>
+
+		<li> Call the printHello( ) function so that it prints your name inside of an h1 element. </li>
+		<h1><script>printHello();</script></h1>
+
+		<li> Create a function called characterCount( ).</li>
+		<li>Create a local variable called testString.</li>
+		<li>Use the prompt( ) to ask for a string.  Store the result in the testString variable.</li>
+		<li>Use the String.length property to get the number of characters in the variable.</li>
+		<li>Display the results using an alert( ).</li>
+		<li>Call this function using an event handler such as onclick.</li>
+		<script>
+			function characterCount(){
+				var testString;
+				testString = prompt("HelloWrold!");
+				alert(testString.length + "words.");
+			}
+		</script>
+
+		<button onclick="characterCount()">Count Wrods</button>
+	</ol>
+	
+</body>
+
+
+</html>
