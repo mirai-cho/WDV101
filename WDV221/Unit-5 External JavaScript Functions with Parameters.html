@@ -11,30 +11,13 @@
 
     <script>
             // 1
-            function pageLoaded() {
-            alert("Page has loaded!");
-            }
-
-            function mouseIn() {
-            var box = document.getElementById("mouseBox");
-            box.style.backgroundColor = "#FC6";
-            box.innerHTML = "Mouse is OVER!";
-            }
-
-            function mouseOut() {
-            var box = document.getElementById("mouseBox");
-            box.style.backgroundColor = "#096";
-            box.innerHTML = "Mouse is OUT!";
-            }
-
-            // 2
-            mouseBox.ondblclick = function() {
-                displayAlert("Double Clicked!");
+            function changeText(id) {
+            id.innerHTML = "Yaay!";
             }
 
             // 3
             function keyAction() {
-            var inputVal = element.value; 
+            var inputVal = document.getElementById("keyInput").value;
             alert("Type: " + inputVal);
             }
 
@@ -46,15 +29,15 @@
     <hr />
 
     <h3>1. Mouse Events</h3>
-    <input type="button" id="btnClick" value="Click Me" />
-    <div id="mouseBox" class="box">Hover or Double Click me!</div>
+    <h1 onclick="changeText(this)">Click on this text!</h1>
+
 
     <h3>2. Form Events</h3>
     <form onsubmit="return handleSubmit()">
-        <p>Change event: 
+        <p>Select city: 
             <select id="selectBox" onchange="handleChange()">
-                <option value="Normal">Normal</option>
-                <option value="Advanced">Advanced</option>
+                <option value="city1">Iowa</option>
+                <option value="city2">Chicago</option>
             </select>
         </p>
         <input type="submit" value="Submit Form" />
