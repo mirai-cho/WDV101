@@ -1,79 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>WDV221 Intro Javascript</title>
-
-    <script src="currencyFormatFunctions.js"></script>
-    <script src="dateFunctions.js"></script>
-    <script src="stringMask.js"></script> 
-
+    <meta charset="utf-8">
+    <title>WDV221 Event Handlers</title>
     <style>
-        body { background-color:#eeddda; }
+        body { background-color: #eeddda; padding: 20px; font-family: sans-serif; }
+        .box { width: 250px; padding: 20px; background: #096; color: white; text-align: center; cursor: pointer; border-radius: 8px; margin-top: 10px; }
+        .highlight { border: 2px solid #d9534f; background-color: #fff; }
     </style>
 
     <script>
-        // Problem 1a: グローバル変数
-        var totalSales = 4375.6; 
+            // 1
+            function changeText(id) {
+            id.innerHTML = "Yaay!";
+            }
 
-        // Problem 4b: マスク処理関数
-        function maskInput() {
-            var inValue = document.getElementById("textToMask").value; 
-            var maskedValue = maskValue(inValue); 
-            document.getElementById("textToMask").value = maskedValue; 
-        }
+            // 3
+            function keyAction() {
+            var inputVal = document.getElementById("keyInput").value;
+            alert("Type: " + inputVal);
+            }
 
-        // Problem 3b: 日付表示関数
-        function displayDateBtn() {
-            var formattedDate = getCurrentDate() + ", " + getCurrentMonthName() + " " + getCurrentYear();
-            document.getElementById("dateDisplay").innerHTML = formattedDate;
-        }
-
-        // ノートにある「JavaScriptによる動的イベント割当」の例
-        window.onload = function() {
-            // ページ読み込み完了時に実行されるイベント
-            console.log("Page loaded and functions are ready.");
-            
-            // マスクボタンに対してJavaScriptからイベントを割り当てる場合
-            // 今回はHTML側のonclickを使用するため、ここは予備知識として記載
-        };
     </script>
 </head>
 
 <body>
-    <h1>WDV221 Intro Javascript</h1>
-    <h2>Unit-5 Assignment - External JavaScript Functions with Parameters</h2>
-    
+    <h1>WDV221 Event Handlers</h1>
     <hr />
 
-    <p>Problem 1</p>
-    <p>Your Total Sales: 
-        <script>
-            // ランタイム処理: 読み込みと同時に外部関数を呼び出す
-            document.write( currency(totalSales) ); 
-        </script>
-    </p>
+    <h3>1. Mouse Events</h3>
+    <h1 onclick="changeText(this)">Click on this text!</h1>
 
-    <p>Problem 2</p>
-    <p>Today's date: 
-        <script>
-            // ランタイム処理: 連結(Concatenation)を使用してフォーマット
-            document.write( getCurrentDayOfWeek() + ", " + getCurrentMonthName() + " " + getCurrentDate() + ", " + getCurrentYear() );
-        </script>
-    </p>
 
-    <p>Problem 3</p>
-    <p>Today's date: <span id="dateDisplay"></span></p>
-    <input type="button" value="Display Date" onclick="displayDateBtn()" /> 
-    
-    <p>&nbsp;</p>
-
-    <p>Problem 4</p>
-    <form>
-        <input type="text" id="textToMask"/>
-        <input type="button" value="Mask" onclick="maskInput()" />
+    <h3>2. Form Events</h3>
+    <form onsubmit="return handleSubmit()">
+        <p>Select city: 
+            <select id="selectBox" onchange="handleChange()">
+                <option value="city1">Iowa</option>
+                <option value="city2">Chicago</option>
+            </select>
+        </p>
+        <input type="submit" value="Submit Form" />
     </form>
 
-    <p><br /></p>
+    <h3>3. Console Events</h3>
+    <p>Type something: 
+        <input type="text" id="keyInput" />
+    </p>
+
 </body>
 </html>

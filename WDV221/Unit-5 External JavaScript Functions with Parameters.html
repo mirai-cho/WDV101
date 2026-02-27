@@ -1,52 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>WDV221 Event Handlers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>WDV221 Intro Javascript</title>
+
+    <script src="currencyFormatFunctions.js"></script>
+    <script src="dateFunctions.js"></script>
+    <script src="stringMask.js"></script> 
+
     <style>
-        body { background-color: #eeddda; padding: 20px; font-family: sans-serif; }
-        .box { width: 250px; padding: 20px; background: #096; color: white; text-align: center; cursor: pointer; border-radius: 8px; margin-top: 10px; }
-        .highlight { border: 2px solid #d9534f; background-color: #fff; }
+        body { background-color:#eeddda; }
     </style>
 
     <script>
-            // 1
-            function changeText(id) {
-            id.innerHTML = "Yaay!";
-            }
+ 
+        var totalSales = 4375.6; 
 
-            // 3
-            function keyAction() {
-            var inputVal = document.getElementById("keyInput").value;
-            alert("Type: " + inputVal);
-            }
+  
+        function maskInput() {
+            var inValue = document.getElementById("textToMask").value; 
+            var maskedValue = maskValue(inValue); 
+            document.getElementById("textToMask").value = maskedValue; 
+        }
 
+   
+        function displayDateBtn() {
+            var formattedDate = getCurrentDate() + ", " + getCurrentMonthName() + " " + getCurrentYear();
+            document.getElementById("dateDisplay").innerHTML = formattedDate;
+        }
+
+
+        window.onload = function() {
+            console.log("Page loaded and functions are ready.");
+
+        };
     </script>
 </head>
 
 <body>
-    <h1>WDV221 Event Handlers</h1>
+    <h1>WDV221 Intro Javascript</h1>
+    <h2>Unit-5 Assignment - External JavaScript Functions with Parameters</h2>
+    
     <hr />
 
-    <h3>1. Mouse Events</h3>
-    <h1 onclick="changeText(this)">Click on this text!</h1>
-
-
-    <h3>2. Form Events</h3>
-    <form onsubmit="return handleSubmit()">
-        <p>Select city: 
-            <select id="selectBox" onchange="handleChange()">
-                <option value="city1">Iowa</option>
-                <option value="city2">Chicago</option>
-            </select>
-        </p>
-        <input type="submit" value="Submit Form" />
-    </form>
-
-    <h3>3. Console Events</h3>
-    <p>Type something: 
-        <input type="text" id="keyInput" />
+    <p>Problem 1</p>
+    <p>Your Total Sales: 
+        <script>
+ 
+            document.write( currency(totalSales) ); 
+        </script>
     </p>
 
+    <p>Problem 2</p>
+    <p>Today's date: 
+        <script>
+            document.write( getCurrentDayOfWeek() + ", " + getCurrentMonthName() + " " + getCurrentDate() + ", " + getCurrentYear() );
+        </script>
+    </p>
+
+    <p>Problem 3</p>
+    <p>Today's date: <span id="dateDisplay"></span></p>
+    <input type="button" value="Display Date" onclick="displayDateBtn()" /> 
+    
+    <p>&nbsp;</p>
+
+    <p>Problem 4</p>
+    <form>
+        <input type="text" id="textToMask"/>
+        <input type="button" value="Mask" onclick="maskInput()" />
+    </form>
+
+    <p><br /></p>
 </body>
 </html>
