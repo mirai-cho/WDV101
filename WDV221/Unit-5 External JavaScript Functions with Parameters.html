@@ -1,63 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>WDV221 Intro Javascript</title>
-
-    <script src="currencyFormatFunctions.js"></script>
-    <script src="dateFunctions.js"></script>
-    <script src="stringMask.js"></script> 
-
+    <meta charset="utf-8">
+    <title>WDV221 Event Handlers</title>
     <style>
-        body { background-color:#eeddda; }
+        body { background-color: #eeddda; padding: 20px; font-family: sans-serif; }
+        .box { width: 250px; padding: 20px; background: #096; color: white; text-align: center; cursor: pointer; border-radius: 8px; margin-top: 10px; }
+        .highlight { border: 2px solid #d9534f; background-color: #fff; }
     </style>
 
     <script>
-        var totalSales = 4375.6; 
+            // 1
+            function pageLoaded() {
+            alert("Page has loaded!");
+            }
 
-        function maskInput() {
-            var inValue = document.getElementById("textToMask").value; 
-            var maskedValue = maskValue(inValue); 
-            document.getElementById("textToMask").value = maskedValue; 
-        }
+            function mouseIn() {
+            var box = document.getElementById("mouseBox");
+            box.style.backgroundColor = "#FC6";
+            box.innerHTML = "Mouse is OVER!";
+            }
 
-        function displayDateBtn() {
-            var formattedDate = getCurrentDate() + ", " + getCurrentMonthName() + " " + getCurrentYear();
-            document.getElementById("dateDisplay").innerHTML = formattedDate;
-        }
+            function mouseOut() {
+            var box = document.getElementById("mouseBox");
+            box.style.backgroundColor = "#096";
+            box.innerHTML = "Mouse is OUT!";
+            }
+
+            // 2
+            mouseBox.ondblclick = function() {
+                displayAlert("Double Clicked!");
+            }
+
+            // 3
+            function keyAction() {
+            var inputVal = element.value; 
+            alert("Type: " + inputVal);
+            }
+
     </script>
 </head>
 
 <body>
-    <h1>WDV221 Intro Javascript</h1>
-    <h2>Unit-5 Assignment - External JavaScript Functions with Parameters</h2>
-    
+    <h1>WDV221 Event Handlers</h1>
     <hr />
 
-    <p>Problem 1</p>
-    <p>b. Your Total Sales: 
-        <script>
-            document.write( currency(totalSales) ); 
-        </script>
-    </p>
+    <h3>1. Mouse Events</h3>
+    <input type="button" id="btnClick" value="Click Me" />
+    <div id="mouseBox" class="box">Hover or Double Click me!</div>
 
-    <p>Problem 2</p>
-    <p>a. Today's date: 
-        <script>
-            document.write( getCurrentDayOfWeek() + ", " + getCurrentMonthName() + " " + getCurrentDate() + ", " + getCurrentYear() );
-        </script>
-    </p>
-
-    <p>Problem 3</p>
-    <p>Today's date: <span id="dateDisplay"></span></p>
-    <input type="button" value="Display Date" onclick="displayDateBtn()" /> 
-    
-    <p>&nbsp;</p>
-
-    <p>Problem 4</p>
-    <form>
-        <input type="text" id="textToMask"/>
-        <input type="button" value="Mask" onclick="maskInput()" />
+    <h3>2. Form Events</h3>
+    <form onsubmit="return handleSubmit()">
+        <p>Change event: 
+            <select id="selectBox" onchange="handleChange()">
+                <option value="Normal">Normal</option>
+                <option value="Advanced">Advanced</option>
+            </select>
+        </p>
+        <input type="submit" value="Submit Form" />
     </form>
+
+    <h3>3. Console Events</h3>
+    <p>Type something: 
+        <input type="text" id="keyInput" />
+    </p>
+
 </body>
 </html>

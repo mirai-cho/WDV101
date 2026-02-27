@@ -19,22 +19,18 @@ body {background-color:#d5c2c2;
 </style>
 
 <script>
-    /* Global variable for Exercise 5 */
     var count = 0; 
 
-    /* Exercise 1: Display the value entered for value1 */
     function displayValue1() {
         var inNum1 = document.getElementById("value1").value; 
         document.getElementById("out1").value = inNum1; 
     }
 
-    // Exercise 2: Display the value entered for value2
     function displayValue2() {
         var inNum2 = document.getElementById("value2").value; 
         document.getElementById("out2").value = inNum2; 
     }
 
-    // Exercise 3: Multiply value1 * value2
     function multiplyValues() {
         var inNum1 = document.getElementById("value1").value;
         var inNum2 = document.getElementById("value2").value;
@@ -42,7 +38,6 @@ body {background-color:#d5c2c2;
         document.getElementById("out3").value = outTotal;
     }
 
-    // Exercise 4: Add value1 + value2
     function addValues() {
         var inNum1 = document.getElementById("value1").value;
         var inNum2 = document.getElementById("value2").value;
@@ -50,7 +45,6 @@ body {background-color:#d5c2c2;
         document.getElementById("out4").value = outTotal;
     }
 
-    // Exercise 5: Increment count and display
     function incrementCount() {
         count++; 
         document.getElementById("out5").value = count;
