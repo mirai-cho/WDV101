@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>WDV221 Intro Javascript</title>
+
+    <script src="currencyFormatFunctions.js"></script>
+    <script src="dateFunctions.js"></script>
+    <script src="stringMask.js"></script> 
+
+    <style>
+        body { background-color:#eeddda; }
+    </style>
+
+    <script>
+        var totalSales = 4375.6; 
+
+        function maskInput() {
+            var inValue = document.getElementById("textToMask").value; 
+            var maskedValue = maskValue(inValue); 
+            document.getElementById("textToMask").value = maskedValue; 
+        }
+
+        function displayDateBtn() {
+            var formattedDate = getCurrentDate() + ", " + getCurrentMonthName() + " " + getCurrentYear();
+            document.getElementById("dateDisplay").innerHTML = formattedDate;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>WDV221 Intro Javascript</h1>
+    <h2>Unit-5 Assignment - External JavaScript Functions with Parameters</h2>
+    
+    <hr />
+
+    <p>Problem 1</p>
+    <p>b. Your Total Sales: 
+        <script>
+            document.write( currency(totalSales) ); 
+        </script>
+    </p>
+
+    <p>Problem 2</p>
+    <p>a. Today's date: 
+        <script>
+            document.write( getCurrentDayOfWeek() + ", " + getCurrentMonthName() + " " + getCurrentDate() + ", " + getCurrentYear() );
+        </script>
+    </p>
+
+    <p>Problem 3</p>
+    <p>Today's date: <span id="dateDisplay"></span></p>
+    <input type="button" value="Display Date" onclick="displayDateBtn()" /> 
+    
+    <p>&nbsp;</p>
+
+    <p>Problem 4</p>
+    <form>
+        <input type="text" id="textToMask"/>
+        <input type="button" value="Mask" onclick="maskInput()" />
+    </form>
+</body>
+</html>
