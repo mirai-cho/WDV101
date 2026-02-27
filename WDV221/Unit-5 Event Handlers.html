@@ -6,21 +6,46 @@
     <style>
         body { background-color: #eeddda; padding: 20px; font-family: sans-serif; }
         .box { width: 250px; padding: 20px; background: #096; color: white; text-align: center; cursor: pointer; border-radius: 8px; margin-top: 10px; }
-        .highlight { border: 2px solid #d9534f; background-color: #fff; }
     </style>
 
     <script>
-            // 1
-            function changeText(id) {
+        function welcome() {
+            alert("Page Loaded!"); 
+        }
+
+        function changeText(id) {
             id.innerHTML = "Yaay!";
-            }
+        }
 
-            // 3
-            function keyAction() {
+        function mouseIn() {
+            var box = document.getElementById("mouseBox");
+            box.style.backgroundColor = "#FC6";
+            box.innerHTML = "Mouse is OVER!"; 
+        }
+
+        function mouseOut() {
+            var box = document.getElementById("mouseBox");
+            box.style.backgroundColor = "#096";
+            box.innerHTML = "Hover over me!";
+        }
+
+        function handleChange() {
+            var val = document.getElementById("selectBox").value;
+            alert("Selected: " + val);
+        }
+
+        function keyAction() {
             var inputVal = document.getElementById("keyInput").value;
-            alert("Type: " + inputVal);
-            }
+            console.log("Type: " + inputVal); 
+        }
 
+        window.onload = function() {
+            welcome(); 
+
+            document.getElementById("keyInput").onkeydown = keyAction; 
+            document.getElementById("mouseBox").onmouseover = mouseIn; 
+            document.getElementById("mouseBox").onmouseout = mouseOut; 
+        }
     </script>
 </head>
 
@@ -29,23 +54,21 @@
     <hr />
 
     <h3>1. Mouse Events</h3>
-    <h1 onclick="changeText(this)">Click on this text!</h1>
+    <h1 onclick="changeText(this)">Click on this text!</h1> 
 
+    <div id="mouseBox" class="box">Hover over me!</div> 
 
     <h3>2. Form Events</h3>
-    <form onsubmit="return handleSubmit()">
-        <p>Select city: 
-            <select id="selectBox" onchange="handleChange()">
-                <option value="city1">Iowa</option>
-                <option value="city2">Chicago</option>
-            </select>
-        </p>
-        <input type="submit" value="Submit Form" />
-    </form>
+    <p>Select city: 
+        <select id="selectBox" onchange="handleChange()"> 
+            <option value="Iowa">Iowa</option>
+            <option value="Chicago">Chicago</option>
+        </select>
+    </p>
 
-    <h3>3. Console Events</h3>
+    <h3>3. Keyboard & Console Events</h3>
     <p>Type something: 
-        <input type="text" id="keyInput" />
+        <input type="text" id="keyInput" /> 
     </p>
 
 </body>
