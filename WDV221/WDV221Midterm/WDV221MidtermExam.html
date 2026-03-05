@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript</title>
+
+<script>
+// 1, 2, & 3. Global variables
+var inputFirstName;
+var inputLastName;
+var formattedName;
+
+// 4. Function with 2 parameters and returning 
+function createPipeFormat(first,last){
+return first + " | " + last;
+}
+
+// 5. Get name and store the result in the formattedname values. 
+function loadName(){
+  inputFirstName = prompt("Type your First Name: ");
+  inputLastName = prompt("Type your Last Name: ");
+  formattedName = createPipeFormat(inputFirstName, inputLastName);
+  alert("Name: " + formattedName);
+}
+
+// 6. displayformattedname function 
+function displayFormattedName(nameDisplay) {
+    alert("The formatted name is: " + nameDisplay);
+}
+
+// 7. charactercount function
+function characterCount() {
+    alert("Character count: " + formattedName.length);
+}
+
+// 8. uppercasename function
+function uppercaseName() {
+    var upper = formattedName.toUpperCase();
+    document.getElementById("uppercaseFormattedDisplay").innerHTML = upper;
+}
+</script>
+<script src="./scripts/dateFunctions.js"></script>
+<script src="./scripts/dollarFormatLibrary.js"></script>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Midterm Exam </h2>
+
+  <p>
+    <input type="button" name="button2" id="button2" value="Load a name" onclick="loadName()">
+  </p>
+
+  <p>
+    <input type="button" name="button4" id="button4" value="Display Formatted Name" onclick="displayFormattedName(formattedName)">
+  </p>
+
+  <p>
+    <input type="button" name="button5" id="button5" value="Characters in Formatted Name" onclick="characterCount()">
+  </p>
+
+  <p>
+    <input type="button" name="button6" id="button6" value="Uppercase Formatted Name" onclick="uppercaseName()">
+  </p>
+
+  <p id="uppercaseFormattedDisplay"></p>
+<hr>
+
+<h3>External Script Results:</h3>
+    <p>
+        <strong>Currency Format:</strong> 
+        <script>
+            document.write(dollarFormat(234721.4));
+        </script>
+    </p>
+
+    <p>
+        <strong>Today's Date:</strong> 
+        <script>
+            var date = getCurrentDayOfWeek() + " " + getCurrentMonthName() + " " + getCurrentDate() + ", " + getCurrentYear();
+            document.write(date);
+        </script>
+    </p>
+</ul>
+</body>
+</html>
