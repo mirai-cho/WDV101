@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+	<head>
+
+		<style>
+			
+			#myList { background-color: lightblue;}
+			
+		</style>
+		<script>
+			// 1. Modify the code so the user can type in the text box and click the "Add item to list" button to add what they typed to the myList element. 
+			function addItem(){
+				var newItemText = document.getElementById("itemInput").value;
+				var newLi = document.createElement("li");
+				newLi.innerHTML = newItemText;
+				document.getElementById("myList").appendChild(newLi);
+				document.getElementById("itemInput").value = "";
+			}
+
+			// 2. Modify the code so the "Change List Color" button will change the background color of the myList element. 
+			function changeColor() {
+					var list = document.getElementById("myList");
+					list.style.backgroundColor = "pink"; 
+			}
+		</script>
+	</head>
+	<body>
+
+		<h1 id="Heading1">WDV221 Midterm Part 2</h1>
+
+		<hr>
+
+		<p>Item:
+		<input type="text" id="itemInput" value=""/>
+		</p>
+		<input type="button" value="Add item to list" onclick="addItem()"/>
+		<input type="button" value="Change List Color" onclick="changeColor()"/>
+
+		<ol id="myList">	
+			<li>Make a list below here: </li>
+		</ol>
+
+
+
+	</body>
+</html>
