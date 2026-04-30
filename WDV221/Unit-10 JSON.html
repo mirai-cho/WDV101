@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WDV2221 Intro Javascript</title>
+<style>
+body {background-color:#ddeeda;}
+.highlightTitle {
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-style:italic;
+    font-size:14px;
+    text-decoration:underline;
+    color:#096;
+}
+</style>
+</head>
+
+<body>
+<h1>WDV2221 Intro JavaScript</h1>
+<h2>Unit-10 Assignment - Inventory Management with JSON</h2>
+
+<h3>Problem 1</h3>
+<div id="problem1Output"></div>
+
+<script>    
+    var itemJSON = '{"itemName":"Book", "inventoryCount":10}';
+    
+    // Convert JSON string to a Javascript Object and display with structure 
+    var itemObject = JSON.parse(itemJSON);
+    var output1 = "Item: " + itemObject.itemName + "<br>";
+    output1 += "Amount in Stock: " + itemObject.inventoryCount;
+    
+    document.getElementById("problem1Output").innerHTML = output1;
+</script>
+
+<h3>Problem 2</h3>
+<form>
+    <p> Item <input type="text" id="newItemName"/></p>
+    <p> Count <input type="text" id="count"/></p>
+    <p> <input type="button" value="Convert to JSON String" onclick="convertToJSON()" /></p>
+    <p id="output" style="font-family: monospace; background: white; padding: 5px; border: 1px solid #ccc; width: fit-content;"></p>
+</form>
+
+<script>
+    function convertToJSON() {
+        // bring out data from the form
+        var name = document.getElementById("newItemName").value;
+        var invCount = document.getElementById("count").value;
+        
+        // Create a plain JavaScript object 
+        var inventoryItem = {
+            itemName: name,
+            inventoryCount: parseInt(invCount) // Convert string input to a number
+        };
+        
+        var jsonString = JSON.stringify(inventoryItem);
+        
+        // Display the output 
+        document.getElementById("output").innerHTML = jsonString;
+    }
+
+    function resetTotal() {
+    document.getElementById("output").innerHTML = "";
+    }
+</script>
+
+	<p>
+      <input type="button" value="reset" onClick="resetTotal()"/>
+    </p>
+
+</body>
+</html>
