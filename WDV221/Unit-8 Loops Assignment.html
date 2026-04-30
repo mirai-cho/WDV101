@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Loops</title>
+<style>
+    hr { margin: 20px 0; }
+    .exercise-container { background-color: #f4f4f4; padding: 10px; margin-bottom: 10px; border-left: 5px solid #ccc; }
+</style>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Unit-8 Loops Assignment</h2>
+<hr />
+
+<h3>1. WHILE loop (0 to 4)</h3>
+<div class="exercise-container">
+<script>
+    var count1 = 0;
+    while(count1 <= 4) {
+        document.write(count1 + "<br/>");
+        count1++;
+    }
+    //This while loop prints numbers 0 to 4. It stops once the counter reaches 5.
+</script>
+</div>
+
+<h3>2. FOR loop (4 down to 0)</h3>
+<div class="exercise-container">
+<script>
+    for(var i = 4; i >= 0; i--) {
+        document.write(i + "<br/>");
+    }
+    //This for loop starts at 4 and counts down to 0 by subtracting 1 each time.
+</script>
+</div>
+
+<h3>3. Paragraph Loop (1 to 5)</h3>
+<div class="exercise-container">
+<script>
+    for(var j = 1; j <= 5; j++) {
+        document.write("<p>" + j + "</p>");
+    }
+    //This loop prints numbers 1 to 5, wrapping each one in <p> tags to create separate lines.
+</script>
+</div>
+
+<h3>4. Multiples of 5 (until > 40)</h3>
+<div class="exercise-container">
+<script>
+    var num4 = 5;
+    while(num4 <= 45) { // by using <=, the number will stop at the point it reaches 45. 
+        document.write(num4 + (num4 > 40 ? "" : ", "));
+        num4 += 5;
+    }
+</script>
+</div>
+
+<h3>5. Dynamic Dropdown Options</h3>
+<p>
+  <label>Select an Option! 
+    <select name="select" id="select">
+      <script>
+          for(var k = 1; k <= 100; k++) { //it will loop and show when user click the dropdown option/selection. 
+              document.write("<option value='option" + k + "'>Option " + k + "</option>");
+          }
+      </script>
+    </select>
+  </label>
+</p>
+
+<p>&nbsp;</p>
+</body>
+</html>
