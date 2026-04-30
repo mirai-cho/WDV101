@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Arrays</title>
+
+<style>
+
+	form	{
+		border:thin solid gray;
+		width:400px;
+		background-color:#9FF;
+		margin-left:50px;	
+	}
+	
+	form p	{
+		padding-left:5px;	
+	}
+</style>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Unit 9 Arrays Assignment</h2>
+<hr /> 
+
+<h3>Lookup Tax Rate Form</h3>
+<p>This form will use arrays to load the values into the drop down list. It will allow the user to select a state from the dropdown list. Once it is selected the tax rate for that state will be dislayed on the form.</p>
+<form id="form1" name="form1" method="post" action="">
+  <p>Please select a state: 
+    <select name="selectState" id="selectState">
+    	<option>Please select a state</option>
+    </select>
+  </p>
+  <p>The Sales tax rate is: <span id="displayTaxRat"></span> </p>
+  <p>
+    <input type="reset" name="button2" id="button2" value="Reset" />
+  </p>
+</form>
+
+<script>
+// make a list as the dropdown.
+const states = ["Iowa", "Minnesota", "Ohio", "Nebraska"];
+
+//a parallel array called stateSalesTax to define tax rate 
+const stateSalesTax = ["6%", "11%", "7%", "8%"];
+
+//the list of states into the drop down menu by using loop 
+window.onload = function() {
+    const selectElement = document.getElementById("selectState");
+    
+    for (let i = 0; i < states.length; i++) {
+        let option = document.createElement("option");
+        option.text = states[i];
+        option.value = states[i];
+        selectElement.add(option);
+    }
+};
+
+// Triggered when the user selects a state to find and display the matching tax rate
+document.getElementById("selectState").onchange = function() {
+    salesTaxLookup();
+};
+
+function salesTaxLookup() {
+    const selectedState = document.getElementById("selectState").value;
+    const displaySpan = document.getElementById("displayTaxRat");
+    
+    if (selectedState === "Please select a state") { //please select a state as defult 
+        displaySpan.innerHTML = "";
+        return;
+    }
+
+    // Lookup loop to find state and display corresponding tax rate
+    for (let i = 0; i < states.length; i++) {
+        if (states[i] === selectedState) {
+            displaySpan.innerHTML = stateSalesTax[i];
+            break; //done 
+        }
+    }
+}
+</script>
+</body>
+</html>
