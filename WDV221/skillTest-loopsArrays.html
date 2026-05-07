@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript</title>
+
+<script>
+    var products = ["Garden Trowel", "Yard Spade", "Planting Spade"];
+    var productNumber = ["gt200", "yard-1", "plant-4"];
+    
+    var selectionFactors = ["Price", "Quality", "Reviews", "Pictures"];
+    
+    var references = ["Field and Stream", "Home and Garden", "Plant Life"];
+    
+    window.onload = function() {
+        // 1. Populate the select menu
+        let productSelect = document.getElementById("selectProduct");
+        for (let i = 0; i < products.length; i++) {
+            let option = document.createElement("option");
+            option.value = productNumber[i];
+            option.text = products[i];
+            productSelect.add(option);
+        }
+
+        // 2. Create radio buttons for selectionFactors
+        // Insert them after the Question 2 text
+        let radioContainer = document.getElementById("radioArea");
+        for (let j = 0; j < selectionFactors.length; j++) {
+            let radio = document.createElement("input");
+            radio.type = "radio";
+            radio.name = "factor";
+            radio.value = selectionFactors[j];
+            
+            let label = document.createElement("label");
+            label.innerHTML = " " + selectionFactors[j] + " ";
+            
+            radioContainer.appendChild(radio);
+            radioContainer.appendChild(label);
+        }
+
+        // 3. Create checkboxes for references
+        // Insert them after the Question 3 text
+        let checkContainer = document.getElementById("checkArea");
+        for (let k = 0; k < references.length; k++) {
+            let check = document.createElement("input");
+            check.type = "checkbox";
+            check.name = "ref";
+            check.value = references[k];
+            
+            let label = document.createElement("label");
+            label.innerHTML = " " + references[k] + " ";
+            
+            checkContainer.appendChild(check);
+            checkContainer.appendChild(label);
+        }
+    };
+</script>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Skill Test - Loops and Arrays</h2>
+<form name="form1" id="form1">
+  <fieldset>
+    <legend>Your Input Matters</legend>
+    
+    <p>1. Which product did you purchase?
+      <select name="selectProduct" id="selectProduct">
+      </select>
+    </p>
+
+    <p>2. Please choose the primary factor in why you purchased our product:</p>
+    <div id="radioArea"></div>
+
+    <p>3. How did your hear about us? Please select all that apply:</p>
+    <div id="checkArea"></div>
+    <br>
+
+    <input type="button" name="button" id="button" value="Submit">
+    <input type="reset" name="button2" id="button2" value="Reset">
+  </fieldset>
+</form>
+
+<h2>4. Special Item Offer!</h2>
+<script>
+    var specialItem = '{"itemName":"Magic Beans", "price":10.00, "inventoryCount":1, "isDiscontinued":true}';
+    
+    // 4. Convert JSON string to Object
+    let itemObj = JSON.parse(specialItem);
+
+    // Display each property in a paragraph
+    document.write("<p>Item Name: " + itemObj.itemName + "</p>");
+    document.write("<p>Price: $" + itemObj.price + "</p>");
+    document.write("<p>Count: " + itemObj.inventoryCount + "</p>");
+    document.write("<p>Limited Time Offer: " + itemObj.isDiscontinued + "</p>");
+</script>
+
+</body>
+</html>

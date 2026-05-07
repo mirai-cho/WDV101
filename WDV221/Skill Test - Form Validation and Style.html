@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<html>
+<body onload="" >
+
+<h1 id="Heading1" class="">WDV221</h1>
+
+<style>
+
+
+</style>
+
+
+<script>
+// Function for Email Validation
+    function ValidateForm() {
+        let emailInput = document.getElementById("userEmail");
+        let errorSpan = document.getElementById("errorMessage");
+        let emailValue = emailInput.value;
+
+        // Check if email contains "@"
+        if (emailValue.indexOf("@") === -1) {
+            // Error
+            errorSpan.innerHTML = "Email must contain an @ symbol";
+            emailInput.style.border = "2px solid red";
+        } else {
+            // Success and Clear the errors
+            resetFormStyles();
+        }
+    }
+
+    // Function to check Password Strength
+    function checkPasswordStrength() {
+        let passwordInput = document.getElementById("userPassword");
+        let strengthSpan = document.getElementById("passwordStrength");
+        let passwordValue = passwordInput.value;
+        let length = passwordValue.length;
+
+        if (length === 0) {
+            strengthSpan.innerHTML = "";
+        } else if (length < 5) {
+            strengthSpan.innerHTML = "Weak";
+            strengthSpan.style.color = "red";
+        } else if (length >= 5 && length < 10) {
+            strengthSpan.innerHTML = "Medium";
+            strengthSpan.style.color = "blue";
+        } else {
+            strengthSpan.innerHTML = "Strong";
+            strengthSpan.style.color = "green";
+        }
+    }
+
+    // Function to reset styles
+    function resetFormStyles() {
+        let emailInput = document.getElementById("userEmail");
+        let errorSpan = document.getElementById("errorMessage");
+        let strengthSpan = document.getElementById("passwordStrength");
+
+        errorSpan.innerHTML = "";
+        emailInput.style.border = "";
+        strengthSpan.innerHTML = "";
+    }
+
+	
+
+</script>
+
+<h2> Create New User </h2>
+
+<form id="myForm">
+    <p>User Email:<input type="text" id="userEmail"/> </p>
+    
+    <p>Password:<input type="password" id="userPassword" onkeyup="checkPasswordStrength()" /> 
+       <span id="passwordStrength"></span>
+    </p>
+    
+    <input type="button" onclick="ValidateForm();" value="submit"/>
+    
+    <input type="reset" value="reset" onclick="resetFormStyles()" />
+    
+    <span id="errorMessage"></span>
+</form>
+
+
+</body>
+</html>

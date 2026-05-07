@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript</title>
+
+<style>
+
+
+</style>
+
+<script>
+//-----Provided Functions do not modify -----	
+	/**	  
+	 * @param {int} min 
+	 * @param {int} max 
+	 * @returns A random number between min and max including max
+	 */
+	function getRndInteger(min, max) 
+	{
+		return Math.floor(Math.random() * (max - min + 1) ) + min;
+	}
+	
+	/**
+	 * This function will sort an array of numbers in descending order. 
+	 * @param {Array of numbers} inArrayToSort 
+	 * @returns a new array with the data sorted in descending order. Note the original array is untouched.
+	 */
+	function sortArrayDesc(inArrayToSort)
+	{		
+		return inArrayToSort.toSorted(function(a, b){return b - a});
+	}
+	/**
+	 * This function will sort an array of numbers in ascending order. 
+	 * @param {Array of numbers} inArrayToSort 
+	 * @returns A new array with the data sorted in ascending order. Note the original array is untouched.
+	 */
+	function sortArray(inArrayToSort)
+	{
+		return inArrayToSort.toSorted(function(a, b){return a - b});
+	}
+//-----------------------------
+//--Your code below--
+
+	// #1. Function to roll 4 dice
+    function rollStats() {
+        let stats = [];
+        for (let i = 0; i < 4; i++) {
+            let roll = getRndInteger(1, 6); // Get a random number between 1 and 6
+            stats.push(roll);
+        }
+        return stats;
+    }
+
+    // #2. Function to sort, remove lowest, and total the rest
+    function getStatTotal(arr) {
+        // Sort the array in descending order
+        let sortedArray = sortArrayDesc(arr);
+        sortedArray.pop(); // Remove the lowest value from the end
+        let total = 0;
+        for (let i = 0; i < sortedArray.length; i++) { // Loop and add the remaining 3 numbers
+            total = total + sortedArray[i];
+        }
+        
+        return total;
+    }
+
+    // #3. Tie it together for the button click
+    function runTask() {
+        let rolls = rollStats(); // Get the random numbers
+        document.getElementById("randomValues").innerHTML = rolls.join(", "); // Display the original 
+        let sorted = sortArrayDesc(rolls);        // Display the sorted version 
+        document.getElementById("sortedValues").innerHTML = sorted.join(", ");
+        let finalSum = getStatTotal(rolls);  // Calculate and display the total
+        document.getElementById("totalValue").innerHTML = finalSum;
+    }
+</script>
+
+
+</head>
+
+<body>
+
+<h2>Values</h2>
+<p id="randomValues">1,6,6,5</p>
+<h2>Sorted Values Desc</h2>
+<p id="sortedValues">6,6,5,1</p>
+<h2>Total</h2>
+<p id="Total:">The total value with the smallest removed is: <span id="totalValue">17</span> </p>   
+
+<input type="button" value="Get Stats and Total" onclick="runTask()" />
+
+</body>
+</html>
