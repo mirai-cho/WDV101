@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dice Game - Final Project</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; background-color: #f4f7f6; padding: 20px; }
+        .game-container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: inline-block; }
+        .dice-img { width: 80px; height: 80px; margin: 10px; transition: transform 0.2s; }
+        .dice-img:hover { transform: scale(1.1); }
+        #diceRollDisplaySpan { font-weight: bold; font-size: 1.8rem; display: block; margin: 15px 0; min-height: 40px; }
+        .controls { margin-top: 20px; padding: 15px; background: #e9ecef; border-radius: 10px; }
+        input[type="number"], input[type="text"] { padding: 8px; border-radius: 5px; border: 1px solid #ddd; width: 60px; }
+        input[type="button"] { padding: 8px 20px; border-radius: 5px; border: none; background-color: #007bff; color: white; cursor: pointer; font-weight: bold; }
+        input[type="button"]:hover { background-color: #0056b3; }
+        .stats-area { margin-top: 20px; display: flex; justify-content: space-around; font-weight: bold; }
+        #historyLog { margin-top: 20px; text-align: left; max-height: 150px; overflow-y: auto; background: #fff; border: 1px solid #eee; padding: 10px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<div class="game-container">
+    <h1>Dice Game Master</h1>
+
+    <div>
+        <img src="image/1.PNG" id="dice1" class="dice-img" />
+        <img src="image/2.PNG" id="dice2" class="dice-img" />
+    </div>
+
+    <p id="diceRollDisplay">Ready to play?</p>
+    <span id="diceRollDisplaySpan"></span>
+
+    <div class="controls">
+        <p>
+            Target Number to Beat: 
+            <input type="number" id="valueToBeat" value="7" min="2" max="12" />
+            <input type="button" value="Single Roll" onclick="Roll();" />
+        </p>
+        <p>
+            Auto Play: 
+            <input type="number" id="autoPlayCount" value="10" min="1" /> 
+            <input type="button" value="Start Auto Run" onclick="autoPlay();" style="background-color: #28a745;" />
+        </p>
+        <input type="button" value="Reset All" onclick="resetGame();" style="background-color: #6c757d;" />
+    </div>
+
+    <div class="stats-area">
+        <div id="statWins">Wins: 0</div>
+        <div id="statLosses">Losses: 0</div>
+        <div id="statRate">Win Rate: 0%</div>
+    </div>
+
+    <div id="historyLog"><strong>Game History:</strong><br></div>
+</div>
+
+<script>
+    // Global Data Object
+    var stats = { wins: 0, losses: 0, total: 0 };
+
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function getDiceImage(val) {
+        return "image/" + val + ".PNG";
+    }
+
+    function updateDisplay(total, toBeat) {
+        var span = document.getElementById("diceRollDisplaySpan");
+        var log = document.getElementById("historyLog");
+        
+        stats.total++;
+        var resultText = "";
+
+        if (total >= toBeat) {
+            stats.wins++;
+            resultText = "Wins!";
+            span.style.color = "#28a745";
+        } else {
+            stats.losses++;
+            resultText = "Loses...";
+            span.style.color = "#dc3545";
+        }
+
+        span.innerHTML = "Total: " + total + " - " + resultText;
+        
+        // Add to history
+        log.innerHTML += "#" + stats.total + ": Rolled " + total + " vs " + toBeat + " (" + resultText + ")<br>";
+        log.scrollTop = log.scrollHeight; // Auto scroll to bottom
+
+        var winRate = ((stats.wins / stats.total) * 100).toFixed(1);
+        document.getElementById("statWins").innerHTML = "Wins: " + stats.wins;
+        document.getElementById("statLosses").innerHTML = "Losses: " + stats.losses;
+        document.getElementById("statRate").innerHTML = "Win Rate: " + winRate + "%";
+    }
+
+    function Roll() {
+        var toBeat = parseInt(document.getElementById("valueToBeat").value);
+        if (toBeat < 2 || toBeat > 12) {
+            alert("Please enter a target between 2 and 12");
+            return;
+        }
+
+        var d1 = getRndInteger(1, 6);
+        var d2 = getRndInteger(1, 6);
+
+        document.getElementById("dice1").src = getDiceImage(d1);
+        document.getElementById("dice2").src = getDiceImage(d2);
+        document.getElementById("diceRollDisplay").innerHTML = "Result: " + d1 + " + " + d2;
+
+        updateDisplay(d1 + d2, toBeat);
+    }
+
+    function autoPlay() {
+        var count = parseInt(document.getElementById("autoPlayCount").value);
+        var toBeat = parseInt(document.getElementById("valueToBeat").value);
+        
+        if (count <= 0) return;
+
+        for (var i = 0; i < count; i++) {
+            var d1 = getRndInteger(1, 6);
+            var d2 = getRndInteger(1, 6);
+            if (i === count - 1) {
+                document.getElementById("dice1").src = getDiceImage(d1);
+                document.getElementById("dice2").src = getDiceImage(d2);
+                document.getElementById("diceRollDisplay").innerHTML = "Final Auto-Roll: " + d1 + " + " + d2;
+            }
+            updateDisplay(d1 + d2, toBeat);
+        }
+    }
+
+    function resetGame() {
+        stats = { wins: 0, losses: 0, total: 0 };
+        document.getElementById("statWins").innerHTML = "Wins: 0";
+        document.getElementById("statLosses").innerHTML = "Losses: 0";
+        document.getElementById("statRate").innerHTML = "Win Rate: 0%";
+        document.getElementById("historyLog").innerHTML = "<strong>Game History:</strong><br>";
+        document.getElementById("diceRollDisplaySpan").innerHTML = "";
+        document.getElementById("diceRollDisplay").innerHTML = "Ready to play?";
+    }
+</script>
+
+</body>
+</html>
